@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <script>
+        function EnableRegister()
+        {
+            var flag=0;
+            for(var i=0; i<document.getElementsByName("rbgender").length; i++)
+            {
+                if(document.getElementsByName("rbgender").item(i).checked==true)
+                {
+                    flag=1;
+                    break;
+                }    
+            }
+            
+            if(document.getElementById("user").value!="" && document.getElementById("password").value!="" && 
+                flag==1 && document.getElementById("dob").value!="" && document.getElementById("que").selectedIndex!=0 &&
+                document.getElementById("ans").value!="")
+            {
+                document.getElementById("btSubmit").disabled=false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="RegisterPage.jsp">
+        <table>
+            <tr>
+                <th><label for="user">User</label></th>
+                <td><input type="text" name="txuser" id="user" onchange="EnableRegister()"></td>
+            </tr>
+            <tr>
+                <th><label for="password">Password</label></th>
+                <td><input type="password" name="txpass" id="password" onchange="EnableRegister()"></td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>
+                    <input type="radio" name="rbgender" id="male" value="Male" onchange="EnableRegister()">
+                    <label for="male">Male</label>
+                    <input type="radio" name="rbgender" id="female" value="Female" onchange="EnableRegister()">
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="dob">DOB</label></th>
+                <td><input type="date" name="DOB" id="dob" onchange="EnableRegister()"></td>
+            </tr>
+            <tr>
+                <th><label for="que">Question</label></th>
+                <td>
+                    <select name="cbQue" id="que" onchange="EnableRegister()">
+                        <option value="-1">Choose any question</option>
+                        <option value="What is you mother tongue?">What is you mother tongue?</option>
+                        <option value="Which is your favourite color?">Which is your favourite color?</option>
+                        <option value="What is your age?">What is your age?</option>
+                        <option value="what is your food?">what is your food?</option>
+                        <option value="what is your height?">what is your height?</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ans">User</label></th>
+                <td><input type="text" name="txans" id="ans" onchange="EnableRegister()"></td>
+            </tr>
+            <tr>
+                <th><input type="submit" value="Register" id="btSubmit" disabled="disabled"></th>
+                <td><input type="reset" value="Reset"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

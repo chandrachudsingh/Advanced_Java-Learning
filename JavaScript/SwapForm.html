@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SwapForm.html</title>
+<script>
+function Hide()
+{
+	document.getElementById('lbhead').style.visibility='hidden';
+	document.getElementById('lbnum1').style.visibility='hidden';
+	document.getElementById('lbnum2').style.visibility='hidden';
+	document.getElementById('txt1').style.visibility='hidden';
+	document.getElementById('txt2').style.visibility='hidden';
+}
+function Show()
+{
+	document.getElementById('lbhead').style.visibility='visible';
+	document.getElementById('lbnum1').style.visibility='visible';
+	document.getElementById('lbnum2').style.visibility='visible';
+	document.getElementById('txt1').style.visibility='visible';
+	document.getElementById('txt2').style.visibility='visible';
+}
+function ref()
+{
+	document.getElementById('a').value="";
+    document.getElementById('b').value="";
+	document.getElementById('txt1').value="";
+    document.getElementById('txt2').value="";
+	Hide();
+}
+function Swap()
+{
+	var a=parseInt(document.getElementById('a').value);
+	var b=parseInt(document.getElementById('b').value);
+	document.getElementById('txt1').value=b;
+	document.getElementById('txt2').value=a;
+	Show();
+}
+</script>
+
+</head>
+
+<body onload="document.getElementById('a').focus()">
+
+<form>
+
+<table border="0" width="300" height="400">
+
+	<tr>
+    	<th rowspan="2" colspan="2">Before Swapping</th>
+    </tr>
+    
+    <tr>  </tr>
+    
+	<tr>
+    	<th>First Number</th>
+        <td><input type="text" id="a" name="num1"/></td>
+    </tr>
+    <tr>
+    	<th>Second Number</th>
+        <td><input type="text" id="b" name="num2"/></td>
+    </tr>
+    <tr>
+    	<td colspan="2">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" value="Swap" name="sbSubmit" onclick="Swap()"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" value="Refresh" name="btrefresh" onclick="ref()"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" value="close" name="btclose" onclick="window.close()"/></td>
+    </tr>
+    
+    <tr>
+    	<th rowspan="2" colspan="2"><label id="lbhead" style="visibility:hidden" >After Swapping</label></th>
+    </tr>
+    <tr>  </tr>
+    <tr>
+    	<th><label for="txt1" id="lbnum1" style="visibility:hidden" >First Number</label></th>
+        <td><input type="text" id="txt1" name="tx1" disabled="disabled" style="visibility:hidden"/></td>
+    </tr>
+    <tr>
+    	<th><label for="txt2" id="lbnum2" style="visibility:hidden" >Second Number</label></th>
+        <td><input type="text" id="txt2" name="tx2" disabled="disabled" style="visibility:hidden"/></td>
+    </tr>
+</table>
+
+</form>
+
+</body>
+</html>

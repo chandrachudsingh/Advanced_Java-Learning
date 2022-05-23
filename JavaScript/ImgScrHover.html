@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hover</title>
+    <script>
+        var source,w,h;
+        function initSrc()
+        {
+            source=document.getElementsByTagName('img').item(0).src;
+            w=prompt("Enter width");
+            h=prompt("Enter height");
+            document.getElementsByTagName('img').item(0).style.width=w+"px";
+            document.getElementsByTagName('img').item(0).style.height=h+"px";
+        }
+
+        function changeImg()
+        {
+            document.getElementsByTagName('img').item(0).src="https://www.screenja.com/static/img/thumbs/goku-ultra-instinct-1-normal-636.png"
+            changeSize();
+        }
+
+        function changeSize()
+        {
+            document.getElementsByTagName('img').item(0).style.width="150px";
+            document.getElementsByTagName('img').item(0).style.height="150px";
+        }
+
+        function originImg()
+        {
+            document.getElementsByTagName('img').item(0).src=source;
+            originSize();
+        }
+
+        function originSize()
+        {
+            document.getElementsByTagName('img').item(0).style.width=w+"px";
+            document.getElementsByTagName('img').item(0).style.height=h+"px";
+        }
+    </script>
+</head>
+<body onload="initSrc()">
+    <img src="https://render.fineartamerica.com/images/rendered/default/poster/10/8/break/images/artworkimages/medium/1/4-goku-pawan-kumar.jpg" alt="" onmouseover="changeImg()" onmouseout="originImg()">
+</body>
+</html>    

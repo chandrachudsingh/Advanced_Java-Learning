@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Window</title>
+    <script>
+        var myWindow;
+        function OpenWin()
+        {
+            myWindow=window.open('','','width=200,height=100,resizable=no');
+            myWindow.document.write("<p>This is 'myWindow'</p>");
+            myWindow.focus();      //gotfocus()
+            myWindow.blur();      //lostfocus()
+            myWindow.opener.focus();
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Open Window" onclick="OpenWin()">
+</body>
+</html>

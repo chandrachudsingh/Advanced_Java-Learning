@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Img & descipt change in Interval</title>
+    <style>
+        #details{
+            background-color: rgb(182, 186, 243);
+            text-align: left;
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 680px;
+            height: 477px;
+            padding: 10px;
+            float: right;
+            right: 50px;
+        }
+
+        #title{
+            color: red;
+            border:2px solid black;
+            border-radius: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 50px;
+            text-align: center;
+            position: fixed;
+            width: 1540px;
+            bottom: 120px;
+        }
+    </style>
+
+    <script>
+        var imag=new Array(10);
+        imag[0]="https://sfwallpaper.com/images/roronoa-zoro-wallpaper-12.jpg"
+        imag[1]="https://c4.wallpaperflare.com/wallpaper/333/894/413/anime-one-piece-nami-one-piece-wallpaper-preview.jpg"
+        imag[2]="https://static3.cbrimages.com/wordpress/wp-content/uploads/2019/10/Vinsmoke-Sanji.jpg"
+        imag[3]="https://cdn.idntimes.com/content-images/duniaku/post/20200214/usopp-weapon-kuro-kabuto-one-piece-1bd1c8fe2f558e42b42ba994bd252122.jpg"
+        imag[4]="https://static3.cbrimages.com/wordpress/wp-content/uploads/2019/12/Featured-image.jpg"
+        imag[5]="https://cdn.hipwallpaper.com/i/71/77/ECFh4g.jpg"
+        imag[6]="https://wallpapermemory.com/uploads/790/franky-one-piece-wallpaper-hd-1920x1080-314627.jpg"
+        imag[7]="https://c4.wallpaperflare.com/wallpaper/821/783/692/anime-one-piece-brook-one-piece-skeleton-wallpaper-preview.jpg"
+        imag[8]="https://digistatement.com/wp-content/uploads/2020/04/anime-one-piece-jinbe-one-piece-wallpaper-preview-728x375.jpg"
+        imag[9]="https://c4.wallpaperflare.com/wallpaper/307/279/774/monkey-d-luffy-one-piece-straw-hat-wallpaper-preview.jpg"
+
+        var descript=new Array(9);
+        
+        descript[0]='<h3 style="color: darkblue;">Roronova Zoro </h3><p>Roronoa Zoro, nicknamed "Pirate Hunter" Zoro, is a fictional character in the One Piece franchise created by Eiichiro Oda. In the story, Zoro is the first to join Monkey D. Luffy after he is saved from being executed at the Marine Base. He is one of the two swordsmen of the Straw Hat Pirates, the other being Brook</p><table><tr><th>Last known bounty (in Belly) :</th><td>320,000,000</td></tr><tr><th>Nickname :</th><td>Pirate Hunter</td></tr><tr><th>Date of Birth :</th><td>November 11</td></tr><tr><th>Devil Fruit :</th><td>-</td></tr><tr><th>Haki Power :</th><td>Busoshoku Haki, Kenbunshoku Haki</td></tr></table><img src="https://i.pinimg.com/originals/ef/1e/1e/ef1e1e7787a813d943d3bf48262c97d8.jpg" alt="Logo" width="210px" height="180px" style="margin: 20px 10px">';
+        
+        descript[1]='<h3 style="color: darkblue;">Nami </h3><p>Nami is a fictional character in the One Piece franchise created by Eiichiro Oda. She is based on Ann and Silk, two characters from Oda previous manga Romance Dawn. She is introduced as a thief and pickpocket who possesses cartographical, meteorological and navigational skills</p><table><tr><th>Last known bounty (in Belly) :</th><td>66,000,000</td></tr><tr><th>Nickname :</th><td>Cat Burgular</td></tr><tr><th>Date of Birth :</th><td>July 3</td></tr><tr><th>Devil Fruit :</th><td>-</td></tr><tr><th>Haki Power :</th><td>-</td></tr></table><img src="https://i.pinimg.com/originals/ef/1e/1e/ef1e1e7787a813d943d3bf48262c97d8.jpg" alt="Logo" width="210px" height="180px" style="margin: 20px 10px">';
+
+        descript[2]='<h3 style="color: darkblue;">Vinsmoke Sanji </h3><p>Sanji, born as Vinsmoke Sanji and also known as "Black Leg Sanji", is a pirate and the chef of the Straw Hat Pirates. He is the fifth member of the crew and the fourth to join.</p><table><tr><th>Last known bounty (in Belly) :</th><td>330,000,000</td></tr><tr><th>Nickname :</th><td>Black Leg</td></tr><tr><th>Date of Birth :</th><td>May 5</td></tr><tr><th>Devil Fruit :</th><td>-</td></tr><tr><th>Haki Power :</th><td>Busoshoku Haki, Kenbunshoku Haki</td></tr></table><img src="https://i.pinimg.com/originals/ef/1e/1e/ef1e1e7787a813d943d3bf48262c97d8.jpg" alt="Logo" width="210px" height="180px" style="margin: 20px 10px">';
+        
+        descript[3]='<h3 style="color: darkblue;">Usopp </h3><p>Usopp is the most relatable character of the bunch for a "normal person," as the rest of the crew are supernatural or superhuman beings. Usopp goes back and forth; he can be a scumbag, a comedian, a brave warrior, a true coward, and even a genius, depending on the situation.</p><table><tr><th>Last known bounty (in Belly) :</th><td>200,000,000</td></tr><tr><th>Nickname :</th><td>God Usopp</td></tr><tr><th>Date of Birth :</th><td>April 1</td></tr><tr><th>Devil Fruit :</th><td>-</td></tr><tr><th>Haki Power :</th><td>Kenbunshoku Haki</td></tr></table><img src="https://i.pinimg.com/originals/ef/1e/1e/ef1e1e7787a813d943d3bf48262c97d8.jpg" alt="Logo" width="210px" height="180px" style="margin: 20px 10px">';
+        
+        descript[4]='<h3 style="color: darkblue;">Nico Robin </h3><p>Nico Robin is the archaeologist of the Straw Hat Pirates. She was originally introduced as the vice president of Baroque Works, known as Miss All Sunday, before joining the Straw Hats. She is the seventh member of the crew, the sixth to join, and, like Nami and Usopp, is the second to rejoin, doing so near the end of the Enies Lobby Arc.</p><table><tr><th>Last known bounty (in Belly) :</th><td>130,000,000</td></tr><tr><th>Nickname :</th><td>Devils child</td></tr><tr><th>Date of Birth :</th><td>February 6</td></tr><tr><th>Devil Fruit :</th><td>Flower-Flower Fruit</td></tr><tr><th>Haki Power :</th><td>-</td></tr></table><img src="https://i.pinimg.com/originals/ef/1e/1e/ef1e1e7787a813d943d3bf48262c97d8.jpg" alt="Logo" width="210px" height="180px" style="margin: 20px 10px">';
+        
+        descript[5]='<h3 style="color: darkblue;">Tony tony chopper </h3><p>Chopper is a reindeer that ate the Hito Hito no Mi, a Devil Fruit that allows its user to transform into a human hybrid or a human at will. He came from Drum Island where he learned how to be a doctor, and is the first member of the Straw Hats who was born on the Grand Line.</p><table><tr><th>Last known bounty (in Belly) :</th><td>100</td></tr><tr><th>Nickname :</th><td>Cotton Candy Lover</td></tr><tr><th>Date of Birth :</th><td>December 24</td></tr><tr><th>Devil Fruit :</th><td>Human-Human Fruit</td></tr><tr><th>Haki Power :</th><td>-</td></tr></table><img src="https://i.pinimg.com/originals/ef/1e/1e/ef1e1e7787a813d943d3bf48262c97d8.jpg" alt="Logo" width="210px" height="180px" style="margin: 20px 10px">';
+        
+        descript[6]='<h3 style="color: darkblue;">Franky </h3><p>Franky is one of the main characters in One Piece and the shipwright of the Straw Hat Pirates. He is a 36-year-old cyborg from Water 7 and was introduced in the story as the leader of the Franky Family, a group of ship dismantlers.</p><table><tr><th>Last known bounty (in Belly) :</th><td>94,000,000</td></tr><tr><th>Nickname :</th><td>Cyborg</td></tr><tr><th>Date of Birth :</th><td>March 9</td></tr><tr><th>Devil Fruit :</th><td>-</td></tr><tr><th>Haki Power :</th><td>-</td></tr></table><img src="https://i.pinimg.com/originals/ef/1e/1e/ef1e1e7787a813d943d3bf48262c97d8.jpg" alt="Logo" width="210px" height="180px" style="margin: 20px 10px">';
+        
+        descript[7]='<h3 style="color: darkblue;">Brook </h3><p>"Soul King" Brook is a member of the Straw Hat Pirates, serving as musician after drifting into the Florian Triangle for 50 years. He is a Devil Fruit user who ate the Yomi Yomi no Mi, and is undead, having been brought back into a pseudo-immortal state because of its powers.</p><table><tr><th>Last known bounty (in Belly) :</th><td>83,000,000</td></tr><tr><th>Nickname :</th><td>Soul King</td></tr><tr><th>Date of Birth :</th><td>April 3</td></tr><tr><th>Devil Fruit :</th><td>Soul-Soul Fruit</td></tr><tr><th>Haki Power :</th><td>-</td></tr></table><img src="https://i.pinimg.com/originals/ef/1e/1e/ef1e1e7787a813d943d3bf48262c97d8.jpg" alt="Logo" width="210px" height="180px" style="margin: 20px 10px">';
+        
+        descript[8]='<h3 style="color: darkblue;">Jimbei </h3><p>"Knight of the Sea" Jinbe is the helmsman of the Straw Hat Pirates, being the tenth member of the crew and the ninth to join. He is a whale shark fish-man who served as the second captain of the Sun Pirates after Fisher Tiger, and a former Shichibukai from 11 years ago until the Battle of Marineford two years ago.</p><table><tr><th>Last known bounty (in Belly) :</th><td>400,000,000</td></tr><tr><th>Nickname :</th><td>Knight of the Sea</td></tr><tr><th>Date of Birth :</th><td>April 2</td></tr><tr><th>Devil Fruit :</th><td>-</td></tr><tr><th>Haki Power :</th><td>Busoshoku Haki</td></tr></table><img src="https://i.pinimg.com/originals/ef/1e/1e/ef1e1e7787a813d943d3bf48262c97d8.jpg" alt="Logo" width="210px" height="180px" style="margin: 20px 10px">';
+        
+        descript[9]='<h3 style="color: darkblue;">Monkey D. Luffy </h3><p>Monkey D. "Straw Hat" Luffy is a fictional character and the main protagonist of the One Piece manga series, created by Eiichiro Oda. Luffy made his debut in One Piece Chapter #1 as a young boy who acquires the properties of rubber after accidentally eating the supernatural Gum-Gum Fruit</p><table><tr><th>Last known bounty (in Belly) :</th><td>1,500,000,000</td></tr><tr><th>Nickname :</th><td>Straw Hat</td></tr><tr><th>Date of Birth :</th><td>May 5</td></tr><tr><th>Devil Fruit :</th><td>Gum-Gum Fruit</td></tr><tr><th>Haki Power :</th><td>Busoshoku Haki, Haoshoku Haki, Kenbunshoku Haki</td></tr></table><img src="https://i.pinimg.com/originals/ef/1e/1e/ef1e1e7787a813d943d3bf48262c97d8.jpg" alt="Logo" width="210px" height="180px" style="margin: 20px 10px">';
+
+        var i=0,interval;
+        function initSrc()
+        {
+            document.getElementsByTagName('img').item(0).style.width="800px";
+            document.getElementsByTagName('img').item(0).style.height="500px";
+            interval=window.setInterval('changeImg()',2000);
+        }
+
+        function changeImg()
+        {
+            document.getElementsByTagName('img').item(0).src=imag[i];
+            details.innerHTML=descript[i];
+            i++;
+            if(i==imag.length)
+                i=0;
+        }
+
+        function OnePieceData()
+        {
+            document.getElementsByTagName('img').item(0).src="https://images5.alphacoders.com/104/thumb-1920-1046568.jpg"
+
+            document.getElementById('details').innerHTML='<h3 style="color: red;">One Piece</h3><p>One Piece is a Japanese shōnen manga series written and illustrated by Eiichiro Oda. It has been serialized in Shueisha s Weekly Shōnen Jump magazine since July 22, 1997, and has been collected into 96 tankōbon volumes as of April 2020.</p><table><tr><th>Author :</th><td>Eiichiro Oda</td></tr><tr><th>English Publisher :</th><td>Viz Media</td></tr><tr><th>Volumes :</th><td>96 (List of volumes)</td></tr><tr><th>English Magazine :</th><td>Weekly Shonen Jump</td></tr></table><img src="https://www.freepnglogos.com/uploads/one-piece-logo-design-0.jpg" alt="Logo" width="270px" height="180px" style="margin: 20px 10px">';
+
+            interval=window.clearInterval(interval);
+        }
+
+        function mangaOpen()
+        {
+            window.open("https://mangaplus.shueisha.co.jp/titles/100020","_self");
+        }
+    </script>
+</head>
+<body onload="initSrc()">
+    <img src="https://besthqwallpapers.com/Uploads/9-3-2019/82756/thumb2-monkey-d-luffy-close-up-artwork-battle-manga.jpg" alt="One Piece" title="One Piece"
+    onmouseover="OnePieceData()" onmouseout="initSrc()" onclick="mangaOpen()">
+    <div id="details" onmouseover="OnePieceData()" onmouseout="initSrc()">
+        <h3 style="color: darkblue;">Monkey D. Luffy </h3>
+        <p>Monkey D. "Straw Hat" Luffy is a fictional character and the main protagonist of the One Piece manga series, created by Eiichiro Oda. Luffy made his debut in One Piece Chapter #1 as a young boy who acquires the properties of rubber after accidentally eating the supernatural Gum-Gum Fruit</p>
+        <table>
+            <tr>
+                <th>Last known bounty (in Belly) :</th>
+                <td>1,500,000,000</td>
+            </tr>
+            <tr>
+                <th>Nickname :</th>
+                <td>Straw Hat</td>
+            </tr>
+            <tr>
+                <th>Date of Birth :</th>
+                <td>May 5</td>
+            </tr>
+            <tr>
+                <th>Devil Fruit :</th>
+                <td>Gum-Gum Fruit</td>
+            </tr>
+            <tr>
+                <th>Haki Power :</th>
+                <td>Busoshoku Haki, Haoshoku Haki, Kenbunshoku Haki</td>
+            </tr>
+        </table>
+        <img src="https://i.pinimg.com/originals/ef/1e/1e/ef1e1e7787a813d943d3bf48262c97d8.jpg" alt="Logo" width="210px" height="180px" style="margin: 20px 10px">
+    </div>
+    <div id="title">One Piece</div>
+</body>
+</html>

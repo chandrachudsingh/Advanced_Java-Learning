@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Transitions</title>
+    <style>
+        /* #container{
+            display: flex;;
+        }
+        img{
+            width: 460px;
+            height: 280px;
+            margin: 20px;
+        }
+        #img1{
+            transition: all 0.5s ease-in-out;
+        }
+
+        #img1:hover{
+            box-shadow: 8px 8px 6px grey;
+            transform: rotateY(180deg);
+            opacity: 0.3;
+        }
+        
+        #img1rev{
+            width: 280px;
+            height: 160px;
+            position: absolute;
+            top: 20px;
+            left: 100px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #img1rev:hover{
+            opacity: 1;
+        }
+
+        p{
+            opacity: 0;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+        }
+        p:hover{
+            opacity: 1;
+        }
+
+        #lamborghini{
+                                   
+        } */
+
+    </style>
+    <script>
+        function init()
+        {
+            document.getElementById('container').style.padding='20px';
+            for(var i=0;i<document.getElementsByTagName('img').length;i++)
+            {
+                document.getElementsByTagName('img').item(i).style.width='460px';
+                document.getElementsByTagName('img').item(i).height='280px';
+                document.getElementsByTagName('img').item(i).style.margin='20px 30px';
+                document.getElementsByTagName('img').item(i).style.transition='all 1s ease-in-out';
+            }
+
+            document.getElementById('img1rev').style.width='200px';
+            document.getElementById('img1rev').style.height='120px';
+            document.getElementById('img1rev').style.position='absolute';
+            document.getElementById('img1rev').style.top='50px';
+            document.getElementById('img1rev').style.left='160px';
+            document.getElementById('img1rev').style.opacity='0';
+            document.getElementById('img1rev').style.transition='opacity 1s ease-in-out';
+        }
+
+        function transition1()
+        {
+            document.getElementById('img1').style.boxShadow='5px 5px 4px 4px dimgrey';
+            document.getElementById('img1').style.transform='rotateY(180deg)';
+            document.getElementById('img1rev').style.opacity='1';
+        }
+        function transition2()
+        {
+            document.getElementById('img2').style.boxShadow='5px 5px 4px 4px dimgrey';
+            document.getElementById('img2').style.transform='rotateX(180deg)';
+
+        }
+        function transition3()
+        {
+            document.getElementById('img3').style.boxShadow='5px 5px 4px 4px dimgrey';
+            document.getElementById('img3').style.transform='scale(1.1)';
+
+        }
+    </script>
+</head>
+<body onload="init()">
+    <div id="container">
+        <div id="lamborghini">
+            <img src="../Images/lamborghini.png" alt="" id="img1" onmouseover="tranition1()">
+            <img src="../Images/lamborghini2.jpg" alt="" id="img1rev">
+            <p>Automobili Lamborghini S.p.A. is an Italian brand and manufacturer of luxury sports cars and SUVs based in Sant'Agata Bolognese.</p>
+        </div>
+        <div id="turn">
+            <img src="../Images/vinatgecar.jpg" alt="" id="img2" onmouseover="tranition2()">
+        </div>
+        <div id="fall">
+            <img src="../Images/van.jpg" alt="" id="img3" onmouseover="tranition3()">
+        </div>
+    </div>
+</body>
+</html>

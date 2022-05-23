@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SwapForm.html</title>
+</head>
+
+<body>
+
+<form name="swap">
+
+<table border="0" width="300" height="400">
+
+	<tr>
+    	<th rowspan="2" colspan="2">Before Swapping</th>
+    </tr>
+    
+    <tr>  </tr>
+    
+	<tr>
+    	<th>First Number</th>
+        <td><input type="text" name="num1"/></td>
+    </tr>
+    <tr>
+    	<th>Second Number</th>
+        <td><input type="text" name="num2"/></td>
+    </tr>
+    <tr>
+    	<td colspan="2">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" value="Swap" name="sbSubmit" onclick="swap.action='SwapForm.jsp'"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="reset" value="Refresh" name="btrefresh" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" value="close" name="btclose" onclick="window.close()"/></td>
+    </tr>
+    
+    <tr>
+    	<th rowspan="2" colspan="2">After Swapping</th>
+    </tr>
+    <tr>  </tr>
+    <tr>
+    	<th>First Number</th>
+        <td><input type="text" name="num1'"/></td>
+    </tr>
+    <tr>
+    	<th>Second Number</th>
+        <td><input type="text" name="num2'"/></td>
+    </tr>
+</table>
+
+</form>
+
+<!--
+<input type="date"/>
+hidden : <input type="hidden"/>
+-->
+</body>
+</html>

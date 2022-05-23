@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AOPForm</title>
+<script>
+function add()
+{
+	var a=parseInt(document.getElementById('tx1').value);
+	var b=parseInt(document.getElementById('tx2').value);
+	var c=a+b;
+	document.getElementById('txres').value=c;
+}
+function subtract()
+{
+	var a=parseInt(document.getElementById('tx1').value);
+	var b=parseInt(document.getElementById('tx2').value);
+	//var c=a+b;
+	document.getElementById('txres').value=a-b;
+}
+function mul()
+{
+	var a=parseInt(document.getElementById('tx1').value);
+	var b=parseInt(document.getElementById('tx2').value);
+	//var c=a+b;
+	document.getElementById('txres').value=a*b;
+}
+function div()
+{
+	var a=parseInt(document.getElementById('tx1').value);
+	var b=parseInt(document.getElementById('tx2').value);
+	//var c=a+b;
+	document.getElementById('txres').value=a/b;
+}
+function mod()
+{
+	var a=parseInt(document.getElementById('tx1').value);
+	var b=parseInt(document.getElementById('tx2').value);
+	//var c=a+b;
+	document.getElementById('txres').value=a%b;
+}
+function ref()
+{
+	document.getElementById('tx1').value="";
+    document.getElementById('tx2').value="";
+	document.getElementById('txres').value="";
+}
+</script>
+
+</head>
+
+<body onload="document.getElementById('tx1').focus()">
+
+<form>
+
+<table border="0" width="250" height="250">
+	<tr>
+    	<th>First Number</th>
+        <td><input type="text" id="tx1" name="num1" /></td>
+    </tr>
+    <tr>
+    	<th>Second Number</th>
+        <td><input type="text" id="tx2" name="num2" /></td>
+    </tr>
+    <tr>
+    	<th>Result</th>
+        <td><input type="text" disabled="disabled" id="txres" name="result" /></td>
+    </tr>
+    <tr>
+    	<th></th>
+        <td><input type="button" value="+" name="cal" onclick="add()"/>
+        <input type="button" value="-" name="cal" onclick="subtract()"/>
+        <input type="button" value="*" name="cal" onclick="mul()"/>
+        <input type="button" value="/" name="cal" onclick="div()"/>
+        <input type="button" value="%" name="cal" onclick="mod()"/></td>
+    </tr>
+    <tr>
+    	<th><input type="button" value="Refresh" name="btrefresh()" onclick="ref()" /></th>
+        <td><input type="button" value="close"  name="btclose" onclick="window.close()"/></td>
+    </tr>
+</table>
+
+</form>
+
+</body>
+</html>

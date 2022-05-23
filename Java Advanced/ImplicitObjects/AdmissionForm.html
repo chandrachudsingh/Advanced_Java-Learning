@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AdmissionForm.html</title>
+<script type="text/javascript">
+	function fillHd()
+	{
+		var i=document.getElementById('degree').selectedIndex;
+		var deg=document.getElementById('degree').options[i].text;
+		document.getElementById('hd').value=deg;
+	}
+</script>
+</head>
+
+<body>
+
+<h2> Admission Form </h2>
+
+<form name="admission">
+
+<table>
+	<tr> 
+		<th> <label for="candidate"> Candidate Name</label> </th>
+        <td><input type="text" id="candidate" name="candidate"/></td>
+    </tr>
+    <tr> 
+		<th> <label for="father"> Father Name</label> </th>
+        <td><input type="text" id="father" name="father"/></td>
+    </tr>
+    <tr>
+    	<th> Gender: </th>
+        <td> <input type="radio" id="male" name="gender" value="Male" /> 
+        <label for="male"> Male </label> 
+        <input type="radio" id="female" name="gender" value="Female"/>
+        <label for="female"> Female </label>  </td>
+    </tr> 
+   	<tr>
+		<th> <label for="address">Address </label> </th>
+        <td> <textarea id="address" rows="2" cols="20" name="address"> 
+        </textarea></td>
+    </tr>
+    <tr>
+    	<th> DOB </th>
+        <td> <select name="dob">
+        		<option value="-1">YYYY</option>
+                <option value="1999">1999</option>
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+             </select>
+             <select name="dob">
+        		<option value="-1">MM</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+             </select>
+             <select name="dob">
+        		<option value="-1">DD</option>
+                <option value="-1">MM</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+             </select>
+        </td>
+    </tr>
+    <tr>
+    	<th> <label for="degree"> Degree </label> </th>
+        <td> <select id="degree" name="cbdegree" onchange="fillHd()">
+        		<option value="0">Select Degree</option>
+                <option value="30000">BCA</option>
+				<option value="40000">MCA</option>
+                <option value="50000">BTech</option>
+				<option value="60000">MTech</option>
+             </select>
+             <input type="hidden" name="hdDeg" id="hd" />
+        </td>
+    </tr>
+    <tr> 
+		<th> <label for="degfee"> Degree Fee </label> </th>
+        <td><input type="text" id="degfee" name="degfee"/></td>
+    </tr>
+    <tr>
+    	<th> Facilities </th>
+        <td><input type="checkbox" id="mess" name="chfac" value="Mess" />
+        <label for="mess">Mess</label>
+        
+        <input type="checkbox" id="hostel" name="chfac" value="Hostel" />
+        <label for="hostel">Hostel</label>
+        
+        <input type="checkbox" id="bus" name="chfac" value="Bus" />
+        <label for="bus">Bus</label>
+        </td>
+    </tr>
+    <tr> 
+		<th> <label for="facfee"> Facilities fee</label> </th>
+        <td><input type="text" id="facfee" name="facfee"/></td>
+    </tr>
+    <tr> 
+		<th> <label for="totfee"> Total fee </label> </th>
+        <td><input type="text" id="totfee" name="totfee"/></td>
+    </tr>
+    <tr> 
+		<th><input type="submit" value="Calculate" name="calculate" onclick="admission.action='AdmissionForm2.jsp'" />
+        <input type="submit" value="Reciept" name="reciept" onclick="admission.action='AdmissionForm.jsp'" /></th>
+        <td><input type="reset" value="Refresh" name="refresh"/>
+        <input type="submit" value="Close" name="close" onclick="window.close()" /></td>
+    </tr>
+</table>
+</form>
+
+</body>
+</html>

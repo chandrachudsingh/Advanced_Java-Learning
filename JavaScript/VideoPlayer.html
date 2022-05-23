@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <style>
+        .videolist{
+            float: right;
+            border: 2px solid steelblue;
+            width: 33vw;
+            height: 100vh;
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .vid{
+            margin: 10px 20px 10px 5px;
+            display: flex;
+            height: 151px;
+            align-items: center;
+        }
+        video{
+            width: 270px;
+            margin: 10px 20px;
+        }
+        .description{
+            width: 100%;
+        }
+        li{
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="videolist">
+        <div class="vid">
+            <video src="../Images/Episode 701.mp4" controls preload="metadata" poster="../Images/OnePiece.jpg"></video>
+            <div class="description">
+                <li><strong>Episode 701 (One Piece)</strong></li>
+                <li>One Piece</li>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

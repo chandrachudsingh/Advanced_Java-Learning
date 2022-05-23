@@ -1,0 +1,347 @@
+*{
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+}
+
+:root{
+    /* variables */
+    --header-color: rgb(48, 48, 68);
+    --font-color: snow;
+    --bg-color-light: rgb(33, 37, 45);
+    --bg-color-dark: rgb(12, 15, 18);
+    --hover-color: rgb(12, 15, 18);
+}
+
+body{
+    background-color: var(--bg-color-dark);
+    padding: 50px 20px 0px 20px;
+}
+
+/* header Strip*/
+
+header{
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 500;
+    background-color: var(--header-color);
+    border-top: 3px solid red;
+    box-shadow: 0 3px 6px 0 rgba(40,47,54,.1);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+    height: 4rem;
+    box-sizing: border-box;
+    padding: 0.2rem 1rem;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logo and AppName */
+#musicPlayerName{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+#musicPlayerName img{
+    background-color: snow;
+    border-radius: 40%;
+    box-shadow: 4px 4px 5px gray;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.2rem;
+    margin: 0.7rem;
+}
+#musicPlayerName p{
+    color: rgb(20, 171, 218);
+    font-family: 'Playball', cursive;
+    font-size: 2rem;
+    width: fit-content;
+    text-shadow: -3px 3px 2px red;
+}
+
+/* Navigation Bar */
+#navBar{
+    font-size: 200px;
+    margin-left: 40px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#navBar li{
+    list-style: none;
+    margin: 20px;
+    word-wrap: none;
+}
+#navBar li a{
+    color: var(--font-color);
+    font-size: 1.4rem;
+    padding: 0.8rem 0rem;
+    text-decoration: none;
+}
+#navBar li a:hover{
+    color: slategray;
+}
+
+#dropList{
+    color: var(--font-color);
+    background-color: var(--bg-color-light);
+    border-radius: 10px;
+    padding: 0.2rem 0rem;
+    position: absolute;
+    top: 3rem;
+    left: 32.5rem;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,.16);
+    display: none;
+}
+
+#dropList ul{
+    list-style: none;
+    font-size: 1rem;
+}
+#dropList ul li{
+    margin: 0.1rem 0rem;
+}
+#dropList ul li a{
+    display: block;
+    color: var(--font-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+#dropList ul li a:hover{
+    background-color: var(--hover-color);
+}
+
+/* Music searchBar */
+#searchBar{
+    margin-left: 16rem;
+}
+
+#searchBar i{
+    color: var(--font-color);
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+    left: 34px;
+}
+
+#searchBar i:hover{
+    cursor: pointer;
+    color: slategray;
+}
+
+#search{
+    color: var(--font-color);
+    background-color: var(--bg-color-light);
+    width: 250px;
+    border: none;
+    border-radius: 8px;
+    padding: 7px;
+    padding-left: 40px;
+}
+
+#search:focus{
+    outline: none;
+}
+
+/* visibility mode & signin buttons */
+#navBtn{
+    color: var(--font-color);
+    width: 10rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-left: 2rem;
+}
+
+#navBtn i{
+    position: relative;
+    top: 3px; 
+    transition: transform 0.4s ease-out;
+}
+
+#navBtn i:hover{
+    cursor: pointer;
+    transform: scale(0.9) rotate(-30deg);
+}
+
+#navBtn button{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 1.4rem;
+    color: var(--font-color);
+    background-color: var(--header-color);
+    border: none;
+    word-wrap: none;
+}
+
+#navBtn button:hover{
+    color: slategray;
+    cursor: pointer;
+}
+
+#navBtn button:focus{
+    outline: none;
+}
+
+/* Signin/Register page */
+#signin{
+    font-size: 20px;
+    color: var(--font-color);
+    background-color: var(--bg-color-light);
+    width: 54vw;
+    height: 70vh;
+    border-radius: 20px;
+    font-family: 'Philosopher', sans-serif;
+    position: absolute;
+    top: 15vh;
+    left: 23vw;
+    display: flex;
+    overflow: auto;
+    visibility: hidden;
+}
+
+@keyframes enlarge{
+    0%{
+        top: 22vh;
+        left: 37vw;
+        width: 20vw;
+        height: 26vh;
+        font-size: 5px;
+        opacity: 0;
+    }
+    80%{
+        top: 14vh;
+        left: 21vw;
+        width: 58vw;
+        height: 72vh;
+        font-size: 20px;
+    }
+    100%{
+        top: 15vh;
+        left: 23vw;
+        width: 54vw;
+        height: 70vh;
+        font-size: 20px;
+        opacity: 1;
+    }
+}
+
+@keyframes shrink{
+    0%{
+        top: 15vh;
+        left: 23vw;
+        width: 54vw;
+        height: 70vh;
+        opacity: 1;
+        font-size: 20px;
+    }
+    100%{
+        top: 22vh;
+        left: 37vw;
+        width: 20vw;
+        height: 26vh;
+        opacity: 0;
+        font-size: 5px;
+    }
+}
+#signin i{
+    font-size: 20px;
+    color: slategray;
+    position: absolute;
+    top: 14px;
+    right: 20px;
+}
+#signin i:hover{
+    color: rgb(183, 184, 185);
+}
+
+#signin img{
+    width: 40%;
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+#login{
+    font-size: 1em;
+    width: 60%;
+    height: 100%;
+    padding: 3em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+#login h1{
+    text-align: center;
+    font-size: 1.4em;
+    padding-bottom: 0.5em;
+}
+#login p{
+    color: slategray;
+    font-size: 1em;
+    margin-bottom: 3em;
+}
+
+#loginForm{
+    font-size: 1em;
+}
+#loginForm input{
+    font-size: 0.8em;
+}
+#loginForm input[type='text'],
+#loginForm input[type='password']{
+    color: var(--font-color);
+    background-color: var(--bg-color-dark);
+    border: none;
+    border-radius: 6px;
+    width: 94%;
+    margin: 0.7em 0em;
+    padding: 0.6em;
+    display: flex;
+    justify-content: space-between;
+}
+#loginForm input[type='text']:focus,
+#loginForm input[type='password']:focus{
+    outline: none;
+}
+
+#loginForm input[type='submit']{
+    color: snow;
+    border: 1px solid red;
+    border-radius: 20px;
+    background-color: rgb(202, 11, 11);
+    padding: 0.5em 2em;
+    display: block;
+    margin: 1em auto;
+    cursor: no-drop;
+}
+/* #loginForm input[type='submit']:hover,
+#loginForm input[type='submit']:active{
+    background-color: rgb(202, 11, 11);
+} */
+
+#loginForm input[type='submit']:focus{
+    outline: none;
+}
+
+#login p button{
+    background-color: var(--bg-color-light);
+    color: blueviolet;
+    font-size: 0.9em;
+    font-family: 'Philosopher', sans-serif;
+    border: none;
+    text-decoration: underline;
+}
+
+#login p button:hover{
+    color: rgb(97, 6, 182);
+    cursor: pointer;
+}
+#login p button:focus{
+    outline: none;
+}

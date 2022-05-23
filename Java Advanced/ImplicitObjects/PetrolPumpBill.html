@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PetrolPumpBill.html</title>
+<script type="text/javascript">
+	function fillHd()
+	{
+		var i=document.getElementById('item').selectedIndex;
+		var items=document.getElementById('item').options[i].text;
+		document.getElementById('hd').value=items;
+	}
+</script>
+</head>
+
+<body>
+
+<h2> PetrolPump Bill </h2>
+
+<form name="pump">
+
+<table >
+	<tr>
+    	<th> <label for="item"> Item </label> </th>
+        <td> <select id="item" name="cbitem" onchange="fillHd()">
+        		<option value="0">Select Item</option>
+                <option value="80">Petrol</option>
+				<option value="70">Diesel</option>
+                <option value="60">Gas</option>
+             </select>
+             <input type="hidden" name="hdItem" id="hd" />
+        </td>
+    </tr>
+    <tr> 
+		<th> <label for="qty"> Qty</label> </th>
+        <td><input type="text" id="qty" name="qty"/></td>
+    </tr>
+    <tr> 
+		<th> <label for="rate"> Rate</label> </th>
+        <td><input type="text" id="rate" name="rate"/></td>
+    </tr>
+    <tr> 
+		<th> <label for="amt"> Amount</label> </th>
+        <td><input type="text" id="amt" name="amount"/></td>
+    </tr>
+    <tr> 
+		<th><input type="submit" value="Calculate" name="calculate" onclick="pump.action='PetrolPumpBill2.jsp'" />
+        <input type="submit" value="Bill" name="bill" onclick="pump.action='PetrolPumpBill.jsp'" /></th>
+        <td><input type="reset" value="Refresh" name="refresh" />
+        <input type="submit" value="Close" name="close" onclick="window.close()" /></td>
+    </tr>
+</table>
+</form>
+
+</body>
+</html>

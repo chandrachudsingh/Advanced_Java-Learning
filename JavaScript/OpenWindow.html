@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Window</title>
+    <script type="text/javascript">
+        function goBack()
+        {
+            window.history.go("-2");    //for 2 pages u have to write -2 instead of -1
+        }
+
+        function winopen()
+        {
+            window.open("","_self","width='300', height='300'");
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="open" onclick="winopen()">
+    <input type="button" value="Go 2 pages back" onclick="goBack()">
+
+    <p>Notice that clicking on the "Go 2 pages back" button here will not result in any action, because there is no previous URL in the History list</p>
+</body>
+</html>

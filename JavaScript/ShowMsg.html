@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Show Message</title>
+<script>
+function ShowMsgRadio()
+{
+	if(document.getElementsByName('gender').item(0).checked==true)
+		alert("Mr. hello");
+	else
+		alert(document.getElementsByName('gender').item(1).value);
+}
+function ShowMsgCheck()
+{
+	if(document.getElementsByName('chmovies').item(0).checked==true)
+		alert(document.getElementsByName('chmovies').item(0).value);
+	if(document.getElementsByName('chmovies').item(1).checked==true)
+		alert(document.getElementsByName('chmovies').item(1).value);
+	if(document.getElementsByName('chmovies').item(2).checked==true)
+		alert(document.getElementsByName('chmovies').item(2).value);
+	if(document.getElementsByName('chmovies').item(3).checked==true)
+		alert(document.getElementsByName('chmovies').item(3).value);
+}
+</script>
+	
+</head>
+
+<body>
+
+<table>
+	<tr>
+    	<th> Gender: </th>
+        <td> <input type="radio" id="male" name="gender" value="Mr. hello" onclick="ShowMsgRadio()"/> 
+        <label for="male"> Male </label> 
+        <input type="radio" id="female" name="gender" value="Mrs. hello" onclick="ShowMsgRadio()"/>
+        <label for="female"> Female </label>  </td>
+    </tr>
+    <tr>
+    	<th> Fav. Movies </th>
+        <td><input type="checkbox" id="abc" name="chmovies" value="ABC" onclick="ShowMsgCheck()"/>
+        <label for="abc">ABC</label>
+        
+        <input type="checkbox" id="xyz" name="chmovies" value="XYZ" onclick="ShowMsgCheck()"/>
+        <label for="xyz">XYZ</label>
+        
+        <input type="checkbox" id="pqr" name="chmovies" value="PQR" onclick="ShowMsgCheck()"/>
+        <label for="pqr">PQR</label>
+        
+        <input type="checkbox" id="klm" name="chmovies" value="KLM" onclick="ShowMsgCheck()"/>
+        <label for="klm">KLM</label>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

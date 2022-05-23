@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock Timer</title>
+
+    <script>
+        var hr=0, min=0, sec=0, str="AM";
+        function designClock()
+        {
+            window.setInterval('timer()', 1000);   
+        }
+
+        function timer()
+        {
+            if(sec==60)
+            { 
+                min+=1;
+                sec=0;
+            }
+            if(min==60) 
+            { 
+                hr+=1; 
+                min=0; 
+            } 
+            if(hr==12) 
+            { 
+                hr=0; 
+                if(str=="AM") 
+                    str="PM"; 
+                else 
+                    str="AM"; 
+            }
+            document.getElementById("time").innerHTML=(hr)+":"+(min)+":"+(sec++)+" "+str;
+        }
+    </script>
+</head>
+<body onload="designClock()">
+    <div id="time" style="font-size: 100px; text-align: center;"></div>
+</body>
+</html>

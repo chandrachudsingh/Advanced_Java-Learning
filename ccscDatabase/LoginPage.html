@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script>
+        function EnableRegister()
+        {
+            if(document.getElementById("user").value!="" && document.getElementById("que").selectedIndex!=0 &&
+                document.getElementById("ans").value!="")
+            {
+                document.getElementById("btLogin").disabled=false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="LoginPage.jsp">
+        <table>
+            <tr>
+                <th><label for="user">User</label></th>
+                <td><input type="text" name="txuser" id="user" onchange="EnableRegister()"></td>
+            </tr>
+            <tr>
+                <th><label for="password">Password</label></th>
+                <td><input type="password" name="txpass" id="password" onchange="EnableRegister()"></td>
+            </tr>
+            <tr>
+                <th><input type="submit" id="btLogin" value="Login"></th>
+            </tr>
+            <tr>
+                <th></th>
+                <td><a href="ForgotPassword.html" style="color: blue;">forgot Password ?</a></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhirlMusic || Feel the Rythm</title>
+
+    <link rel="stylesheet" href="MusicPlayer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c99db268c1.js" crossorigin="anonymous"></script>
+
+    <script>
+        function loadData()
+        {
+            document.getElementById('mode').value=1;
+        }
+
+        function modeChange()
+        {
+            if(document.getElementById('mode').value==1)
+            {
+                document.getElementById('mode').innerHTML='<i class="fas fa-sun" onclick="modeChange()"></i>';
+                document.getElementById('mode').value=0;
+                document.documentElement.style.setProperty("--header-color","white");
+                document.documentElement.style.setProperty("--font-color","rgb(33, 37, 45)");
+                document.documentElement.style.setProperty("--bg-color-light","snow");
+                document.documentElement.style.setProperty("--bg-color-dark","snow");
+                document.documentElement.style.setProperty("--hover-color","rgb(225, 228, 228)");
+
+                for(var i=0;i<document.getElementsByClassName('inputfield').length;i++)
+                    document.getElementsByClassName('inputfield').item(i).style.border='1px solid rgba(121, 118, 118, 0.25)';
+
+                document.getElementById('signin').style.border='1px solid rgba(121, 118, 118, 0.5)';
+            }    
+            else
+            {
+                document.getElementById('mode').innerHTML='<i class="fas fa-moon" onclick="modeChange()"></i>';
+                document.getElementById('mode').value=1;
+                document.documentElement.style.setProperty("--header-color","rgb(48, 48, 68)");
+                document.documentElement.style.setProperty("--font-color","snow");
+                document.documentElement.style.setProperty("--bg-color-light","rgb(33, 37, 45)");
+                document.documentElement.style.setProperty("--bg-color-dark","rgb(12, 15, 18)");
+                document.documentElement.style.setProperty("--hover-color","rgb(12, 15, 18)");
+
+                for(var i=0;i<document.getElementsByClassName('inputfield').length;i++)
+                    document.getElementsByClassName('inputfield').item(i).style.border='none';
+
+                document.getElementById('signin').style.border='none';
+            }    
+        }
+
+        function loginPage()
+        {
+            // document.getElementsByTagName('header').item(0).style.opacity='0.2';
+            // document.getElementsByTagName('header').item(0).style.borderImageOutset='0.2';
+            // document.getElementById('player').style.opacity='0.2';
+            // document.getElementById('musiclist').style.opacity='0.2';
+            // document.getElementById('dropList').style.opacity='0.2';
+            
+            document.getElementById('signin').style.visibility='visible';
+            document.getElementById('signin').style.opacity='1';
+            document.getElementById('signin').style.animation='enlarge 0.5s ease-out';
+
+            document.getElementsByTagName('header').item(0).style.filter='brightness(20%)';
+            document.getElementById('player').style.filter='brightness(20%)';
+            document.getElementById('musiclist').style.filter='brightness(20%)';
+            document.getElementById('dropList').style.filter='brightness(20%)';
+        }
+
+        function registerForm()
+        {
+            if(document.getElementById('loginBtn').value=='Login')
+            {
+                document.getElementById('loginBtn').value='SignUp';
+                document.getElementById('SignupLine').innerHTML='Already a user, <button onclick="registerForm()">Login here</button>';
+            }
+            else
+            {
+                document.getElementById('loginBtn').value='Login';
+                document.getElementById('SignupLine').innerHTML='New user, <button onclick="registerForm()">Register here</button>';
+            }
+        }
+
+        function pageclose()
+        {
+            document.getElementById('signin').style.animation='shrink 0.3s ease-in';
+            window.setTimeout("document.getElementById('signin').style.visibility='hidden'",300);
+
+            // document.getElementsByTagName('header').item(0).style.opacity='1';
+            // document.getElementById('player').style.opacity='1';
+            // document.getElementById('musiclist').style.opacity='1';
+            // document.getElementById('dropList').style.opacity='1';
+
+            document.getElementsByTagName('header').item(0).style.filter='brightness(100%)';
+            document.getElementById('player').style.filter='brightness(100%)';
+            document.getElementById('musiclist').style.filter='brightness(100%)';
+            document.getElementById('dropList').style.filter='brightness(100%)';
+
+            document.getElementById('loginForm').reset();
+            document.getElementById('SignupLine').innerHTML='New user, <button onclick="registerForm()">Register here</button>';
+            // document.getElementsByTagName('body').item(0).style.backgroundColor='';
+        }
+
+        function dropListVisible()
+        {
+            document.getElementById('dropList').style.display='block';
+        }
+
+        function dropListInvisible()
+        {
+            document.getElementById('dropList').style.display='none';
+        }
+    </script>
+</head>
+<body onload="loadData()">
+    <header>
+        <div id="musicPlayerName">
+            <img src="../Images/Player logo.png" draggable="false">
+            <p>WhirlMusic</p>
+        </div>
+
+        <nav id="navBar">
+            <li><a href="Music/Home.html">Home</a></li>
+            <li><a href="Music/MyMusic.html" onmouseover="dropListVisible()" onmouseout="dropListInvisible()">My Music</a></li>
+        </nav>
+        <div id="dropList" onmouseover="dropListVisible()"  onmouseout="dropListInvisible()">
+            <ul>
+                <li><a href="">My Playlist</a></li>
+                <li><a href="">Followed Artists</a></li>
+                <li><a href="">Followed Playlists</a></li>
+            </ul>
+        </div>
+
+        <div id="searchBar">
+            <i class="fas fa-search"></i>
+            <input type="text" name="txsearch" class="inputfield" id="search" placeholder="Search for your music">
+        </div>
+
+        <div id="navBtn">
+            <div id="mode"><i class="fas fa-moon" onclick="modeChange()"></i></div>
+            <button onclick="loginPage()">Sign In</button>
+        </div>
+    </header>
+
+    <div id="signin">
+        <i class="fas fa-times" onclick="pageclose()"></i>
+        <img src="../Images/verificationImg.png" alt="" draggable="false">
+        <div id="login">
+            <h1>Login/Signup</h1>
+            <p>Get a personalised experience, and access all your music</p>
+            <form action="WhirlLogin/Register.jsp" method="POST" id="loginForm">
+                <input type="text" name="txuser" class="inputfield" placeholder="Enter Username" minlength="1" onblur="">
+                <input type="password" name="txpassword" class="inputfield" placeholder="Enter Password" minlength="6">
+                <input type="submit" value="Login" id="loginBtn" disabled>
+            </form>
+            <p id="SignupLine">New User, <button onclick="registerForm()">Register here</button></p>
+        </div>
+    </div>
+
+    <div id="player"></div>
+
+    <div id="musiclist">
+        <div class="music"></div>
+    </div>
+</body>
+</html>

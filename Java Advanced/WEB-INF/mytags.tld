@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<!-- a tag library descriptor -->
+
+<taglib>
+   <tlib-version>1.0</tlib-version>
+   <jsp-version>1.2</jsp-version>
+   <short-name>simple</short-name>
+   <uri>./WEB-INF/MyTags.tld</uri>
+   <description>This is simple tag library for the examples</description>
+
+  <tag>
+    <name>today</name>
+    <tag-class>MyPack.MyTagHandler</tag-class>
+  </tag>  
+
+    <tag>  
+		<name>simple</name>  
+		<tag-class>MyPack.TagSupportExample</tag-class>    
+	</tag > 
+
+    <tag>  
+		<name>myTag</name>  
+		<tag-class>MyPack.SimpleTagHandler</tag-class>    
+	</tag> 
+  	<tag>  
+		<name>power</name>  
+		<tag-class>MyPack.PowerNumber</tag-class>  
+		  
+		<attribute>  
+			<name>number</name>  
+			<required>true</required>  
+		</attribute>  
+      
+		<attribute>  
+			<name>power</name>  
+			<required>true</required>  
+		</attribute>  
+	</tag> 
+
+	<tag>  
+		<name>loop</name>  
+		<tag-class>MyPack.PrintNumber</tag-class>  
+		
+		<attribute>  
+			<name>start</name>  
+			<required>true</required>  
+		</attribute>  
+		
+		<attribute>  
+			<name>end</name>  
+			<required>true</required>  
+		</attribute>  
+	</tag>  
+
+	<tag>  
+		<name>table</name>  
+		<tag-class>MyPack.Table</tag-class>  
+			
+		<attribute>  
+			<name>number</name>  
+			<required>true</required>  
+		</attribute>    
+	</tag>  
+
+	<tag>  
+		<name>fact</name>  
+		<tag-class>MyPack.Factorial</tag-class>  
+			
+		<attribute>  
+			<name>number</name>  
+			<required>true</required>  
+		</attribute>    
+	</tag>   
+
+	<tag>  
+		<name>helloo</name>  
+		<tag-class>MyPack.HellooTag</tag-class>
+		<bodycontent>empty</bodycontent>      
+	</tag>
+
+	<tag>  
+		<name>hello</name>  
+		<tag-class>MyPack.HelloTag</tag-class>
+		<info>info</info>
+		<body-content>scriptless</body-content>
+
+		<attribute>  
+			<name>to</name>  
+			<required>true</required>  
+		</attribute>      
+		<attribute>  
+			<name>from</name>  
+			<required>true</required>  
+		</attribute>      
+	</tag>
+
+	<tag>  
+		<name>lower</name>  
+		<tag-class>MyPack.TagHandlerBodyTag</tag-class>
+		<bodycontent>JSP</bodycontent>     
+	</tag> 
+
+	<tag>  
+		<name>image</name>  
+		<tag-class>MyPack.ImageTag</tag-class>
+		<description>This tag is for displaying image</description>
+		<bodycontent>scriptless</bodycontent>
+
+		<attribute>  
+			<name>url</name>  
+			<required>true</required>  
+		</attribute>      
+		<attribute>  
+			<name>showBorder</name>  
+			<required>true</required>  
+		</attribute>      
+		<attribute>  
+			<name>showUrl</name>  
+			<required>true</required>  
+		</attribute>      
+	</tag>      
+</taglib>
+

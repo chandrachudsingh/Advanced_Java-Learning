@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PetrolPumpBill.html</title>
+
+<script type="text/javascript">
+	function fillHd()
+	{
+		var i=document.getElementById('item').selectedIndex;
+		var items=document.getElementById('item').options[i].text;
+		var rate=document.getElementById('item').options[i].value;
+		
+		document.getElementById('itembill').value=items;
+		document.getElementById('rate').value=rate;
+	}
+	
+	function cal()
+	{
+		var qty=parseFloat(document.getElementById('qty').value);
+		var rate=parseFloat(document.getElementById('rate').value);
+		document.getElementById('amt').value=qty*rate;
+	}
+	
+	function bill()
+	{
+		if(document.getElementById('amt').value=="")
+			cal();
+			
+		document.getElementById('qtybill').value=document.getElementById('qty').value;
+		document.getElementById('ratebill').value=document.getElementById('rate').value;
+		document.getElementById('amtbill').value=document.getElementById('amt').value;
+		
+		document.getElementById('tab2').style.visibility='visible';
+	}
+	
+	function ref()
+	{
+		document.getElementById('item').selectedIndex=0;
+    	document.getElementById('qty').value="";
+		document.getElementById('rate').value="";
+    	document.getElementById('amt').value="";
+		document.getElementById('itembill').value="";
+    	document.getElementById('qtybill').value="";
+		document.getElementById('ratebill').value="";
+    	document.getElementById('amtbill').value="";
+		
+		document.getElementById('tab2').style.visibility='hidden';
+	}
+</script>
+</head>
+
+<body>
+
+<h2> PetrolPump Bill </h2>
+
+<form>
+
+<table >
+	<tr>
+    	<th> <label for="item"> Item </label> </th>
+        <td> <select id="item" name="cbitem" onchange="fillHd()">
+        		<option value="0">Select Item</option>
+                <option value="80">Petrol</option>
+				<option value="70">Diesel</option>
+                <option value="60">Gas</option>
+             </select>
+        </td>
+    </tr>
+    <tr> 
+		<th> <label for="qty"> Qty</label> </th>
+        <td><input type="text" id="qty" name="qty"/></td>
+    </tr>
+    <tr> 
+		<th> <label for="rate"> Rate</label> </th>
+        <td><input type="text" id="rate" name="rate" disabled="disabled"/></td>
+    </tr>
+    <tr> 
+		<th> <label for="amt"> Amount</label> </th>
+        <td><input type="text" id="amt" name="amount" disabled="disabled"/></td>
+    </tr>
+    <tr> 
+		<th><input type="button" value="Calculate" name="btcal" onclick="cal()" /></th>
+        <td><input type="button" value="Bill" name="btbill" onclick="bill()" />
+        <input type="button" value="Refresh" name="btref" onclick="ref()"/>
+        <input type="button" value="Close" name="btclose" onclick="window.close()" /></td>
+    </tr>
+</table>
+
+<table id="tab2" style="visibility:hidden">
+    <tr>
+    	<th colspan="2"><label><hr /> BILL <hr /></label></th>
+    </tr>
+    <tr>
+    	<th> <label for="itembill"> Item : </label> </th>
+        <td> <input type="text" name="txitem" id="itembill" disabled="disabled"/></td>
+    </tr>
+    <tr> 
+		<th> <label for="qtybill"> Qty : </label> </th>
+        <td><input type="text" id="qtybill" name="txqty" disabled="disabled"/></td>
+    </tr>
+    <tr> 
+		<th> <label for="ratebill"> Rate : </label> </th>
+        <td><input type="text" id="ratebill" name="txrate" disabled="disabled"/></td>
+    </tr>
+    <tr> 
+		<th> <label for="amtbill"> Amount : </label> </th>
+        <td><input type="text" id="amtbill" name="txamount" disabled="disabled"/></td>
+    </tr>
+</table>
+</form>
+
+</body>
+</html>

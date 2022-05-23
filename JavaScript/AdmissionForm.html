@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AdmissionForm</title>
+<script type="text/javascript">
+	function fillHd()
+	{
+		var i=document.getElementById('degree').selectedIndex;
+		var deg=document.getElementById('degree').options[i].text;
+		var degfee=document.getElementById('degree').options[i].value;
+		document.getElementById('degreeform').value=deg;
+		document.getElementById('degfee').value=degfee;
+		
+		var facfee=0;
+		var fac="";
+		
+		if(document.getElementsByName('chfac').item(0).checked==true)
+		{
+			fac+="Mess";
+			facfee+=parseFloat(document.getElementsByName('chfac').item(0).value);
+		}
+		if(document.getElementsByName('chfac').item(1).checked==true)
+		{
+			fac+="Hostel";
+			facfee+=parseFloat(document.getElementsByName('chfac').item(1).value);
+		}
+		if(document.getElementsByName('chfac').item(2).checked==true)
+		{
+			fac+="Bus";
+			facfee+=parseFloat(document.getElementsByName('chfac').item(2).value);
+		}
+		
+		document.getElementById('facform').value=fac;
+		document.getElementById('facfee').value=facfee;
+	}
+	
+	function cal()
+	{
+		var degfee=parseFloat(document.getElementById('degfee').value);
+		var facfee=parseFloat(document.getElementById('facfee').value);
+		document.getElementById('totfee').value=degfee+facfee;
+	}
+	
+	function fillreciept()
+	{
+		if(document.getElementById('totfee').value=="")
+			cal();
+		
+		document.getElementById('candform').value=document.getElementById('cand').value;
+		document.getElementById('fatherform').value=document.getElementById('fat').value;
+		
+		for(var i=0;i<document.getElementsByName('gender').length;i++)
+		{
+			if(document.getElementsByName('gender').item(i).checked==true)
+				document.getElementById('genderform').value=document.getElementsByName('gender').item(i).value;
+		}
+		
+		document.getElementById('addressform').value=document.getElementById('addr').value;
+		
+		for(var i=0;i<document.getElementsByName('dob').length;i++)
+			document.getElementById('dobform').value+=document.getElementsByName('dob').item(i).value+"/";
+			
+		document.getElementById('degfeeform').value=document.getElementById('degfee').value;
+		document.getElementById('facfeeform').value=document.getElementById('facfee').value;
+		document.getElementById('totfeeform').value=document.getElementById('totfee').value;
+		
+		document.getElementById('tab2').style.visibility='visible';
+	}
+	
+	function ref()
+	{
+		document.getElementById('cand').value="";
+    	document.getElementById('fat').value="";
+		
+		for(var i=0;i<document.getElementsByName('gender').length;i++)
+			document.getElementsByName('gender').item(i).checked=false;
+			
+		document.getElementById('addr').value="";
+		
+		for(var i=0;i<document.getElementsByName('dob').length;i++)
+    		document.getElementsByName('dob').item(i).selectedIndex=0;
+			
+		document.getElementById('degree').selectedIndex=0;
+    	document.getElementById('degfee').value="";
+		
+		for(var i=0;i<document.getElementsByName('chfac').length;i++)
+			document.getElementsByName('chfac').item(i).checked=false;
+			
+    	document.getElementById('facfee').value="";
+		document.getElementById('totfee').value="";
+		document.getElementById('candform').value="";
+    	document.getElementById('fatherform').value="";
+		document.getElementById('genderform').value="";
+		document.getElementById('addressform').value="";
+    	document.getElementById('dobform').value="";
+		document.getElementById('degreeform').value="";
+    	document.getElementById('degfeeform').value="";
+		document.getElementById('facform').value="";
+    	document.getElementById('facfeeform').value="";
+		document.getElementById('totfeeform').value="";
+		
+		document.getElementById('tab2').style.visibility='hidden';
+	}
+</script>
+</head>
+
+<body>
+
+<h2> Admission Form </h2>
+
+<form>
+
+<table>
+	<tr> 
+		<th> <label for="cand"> Candidate Name</label> </th>
+        <td><input type="text" id="cand" name="candidate"/></td>
+    </tr>
+    <tr> 
+		<th> <label for="fat"> Father Name</label> </th>
+        <td><input type="text" id="fat" name="father"/></td>
+    </tr>
+    <tr>
+    	<th> Gender: </th>
+        <td> <input type="radio" id="male" name="gender" value="Male" /> 
+        <label for="male"> Male </label> 
+        <input type="radio" id="female" name="gender" value="Female"/>
+        <label for="female"> Female </label>  </td>
+    </tr> 
+   	<tr>
+		<th> <label for="addr">Address </label> </th>
+        <td> <textarea id="addr" rows="2" cols="20" name="address"> 
+        </textarea></td>
+    </tr>
+    <tr>
+    	<th> DOB </th>
+        <td> <select name="dob">
+        		<option value="-1">YYYY</option>
+                <option value="1999">1999</option>
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+             </select>
+             <select name="dob">
+        		<option value="-1">MM</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+             </select>
+             <select name="dob">
+        		<option value="-1">DD</option>
+                <option value="-1">MM</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+             </select>
+        </td>
+    </tr>
+    <tr>
+    	<th> <label for="degree"> Degree </label> </th>
+        <td> <select id="degree" name="cbdegree" onchange="fillHd()">
+        		<option value="0">Select Degree</option>
+                <option value="30000">BCA</option>
+				<option value="40000">MCA</option>
+                <option value="50000">BTech</option>
+				<option value="60000">MTech</option>
+             </select>
+        </td>
+    </tr>
+    <tr> 
+		<th> <label for="degfee"> Degree Fee </label> </th>
+        <td><input type="text" id="degfee" name="degfee" disabled="disabled"/></td>
+    </tr>
+    <tr>
+    	<th> Facilities </th>
+        <td><input type="checkbox" id="mess" name="chfac" value="10000" onchange="fillHd()"/>
+        <label for="mess">Mess</label>
+        
+        <input type="checkbox" id="hostel" name="chfac" value="12000" onchange="fillHd()"/>
+        <label for="hostel">Hostel</label>
+        
+        <input type="checkbox" id="bus" name="chfac" value="8000" onchange="fillHd()"/>
+        <label for="bus">Bus</label>
+        </td>
+    </tr>
+    <tr> 
+		<th> <label for="facfee"> Facilities fee</label> </th>
+        <td><input type="text" id="facfee" name="facfee" disabled="disabled"/></td>
+    </tr>
+    <tr> 
+		<th> <label for="totfee"> Total fee </label> </th>
+        <td><input type="text" id="totfee" name="totfee" disabled="disabled"/></td>
+    </tr>
+    <tr> 
+		<th><input type="button" value="Calculate" name="btcal" onclick="cal()" />
+        <input type="button" value="Reciept" name="btreciept" onclick="fillreciept()" /></th>
+        <td><input type="button" value="Refresh" name="btref" onclick="ref()"/>
+        <input type="button" value="Close" name="btclose" onclick="window.close()" /></td>
+    </tr>
+</table>
+   
+<table id="tab2" style="visibility:hidden">   
+    <tr>
+    	<th> <label><hr /> FORM <hr /></label> </th>
+    </tr>
+    <tr> 
+		<th> <label for="candform"> Candidate Name : </label> </th>
+        <td><input type="text" id="candform" name="txcandidate" disabled="disabled"/></td>
+    </tr>
+    <tr> 
+		<th> <label for="fatherform"> Father Name : </label> </th>
+        <td><input type="text" id="fatherform" name="txfather" disabled="disabled"/></td>
+    </tr>
+    <tr>
+    	<th> <label for="genderform">Gender : </th>
+        <td> <input type="text" id="genderform" name="txgender" disabled="disabled"/> </td>
+    </tr> 
+   	<tr>
+		<th> <label for="addressform">Address : </label> </th>
+        <td> <textarea id="addressform" rows="2" cols="20" name="taddress" disabled="disabled"> 
+        </textarea></td>
+    </tr>
+    <tr>
+    	<th> <label for="dobform">DOB :</label> </th>
+        <td> <input type="text" id="dobform" name="txdob" disabled="disabled" />
+        </td>
+    </tr>
+    <tr>
+    	<th> <label for="degreeform"> Degree : </label> </th>
+        <td> <input type="text" id="degreeform" name="txdegree" disabled="disabled"/> </td>
+    </tr>
+    <tr> 
+		<th> <label for="degfeeform"> Degree Fee </label> </th>
+        <td><input type="text" id="degfeeform" name="txdegfee" disabled="disabled"/></td>
+    </tr>
+    <tr>
+    	<th> <label for="facform"> Facilities : </th>
+        <td><input type="text" id="facform" name="txfac" disabled="disabled"/></td>
+    </tr>
+    <tr> 
+		<th> <label for="facfeeform"> Facilities fee : </label> </th>
+        <td><input type="text" id="facfeeform" name="txfacfee" disabled="disabled"/></td>
+    </tr>
+    <tr> 
+		<th> <label for="totfeeform"> Total fee </label> </th>
+        <td><input type="text" id="totfeeform" name="txtotfee" disabled="disabled"/></td>
+    </tr>
+</table>
+</form>
+
+</body>
+</html>

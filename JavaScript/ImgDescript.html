@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Description</title>
+    <style>
+        img{
+            margin: 20px 250px;
+            width: 250px;
+            height: 250px;
+        }
+    </style>
+    <script>
+        function India()
+        {
+            document.getElementById('details').innerHTML='<table style="margin: auto;"><tr><td>Name : </td><td>Narendra Modi</td></tr><tr><td>Nationality : </td><td>Indian</td></tr><tr><td>Age : </td><td>69</td></tr><tr><td>PM Position : </td><td>14<sup>th</sup></td></tr></table>';
+        }
+
+        function America()
+        {
+            document.getElementById('details').innerHTML='<table style="margin: auto;"><tr><td>Name : </td><td>Donald Trump</td></tr><tr><td>Nationality : </td><td>American</td></tr><tr><td>Age : </td><td>73</td></tr><tr><td>PM Position : </td><td>45<sup>th</sup></td></tr></table>';
+        }
+    </script>
+</head>
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Shri_Narendra_Modi.jpg" alt="Narendra Modi" onclick="India()">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/800px-Donald_Trump_official_portrait.jpg" alt="Donald Trump" onclick="America()">
+    <div id="details" style="border: groove;"></div>
+</body>
+</html>

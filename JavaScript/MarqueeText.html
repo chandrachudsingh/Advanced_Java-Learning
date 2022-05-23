@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marquee Text</title>
+    <script language="javascript">
+        function first()
+        {
+            // document.all.myM1.stop();
+            document.getElementById('myM1').stop();
+        }
+
+        function sec()
+        {
+            // document.all.myM1.start();
+            document.getElementById('myM1').start();
+        }
+    </script>
+</head>
+<body>
+    
+    <marquee id="myM1" width="300" onmouseover="first();" onmouseout="sec();" style="cursor: pointer; text-align: left;" scrollamount="5">Computer-Education.com</marquee>
+
+</body>
+</html>

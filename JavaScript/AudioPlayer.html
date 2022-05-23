@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+
+    <link rel="stylesheet" href="AudioPlayer.css">
+    <script src="https://kit.fontawesome.com/c99db268c1.js" crossorigin="anonymous"></script>
+
+    <script>
+        function playSong(index)
+        {
+            for(var i=0;i<document.getElementsByTagName('audio').length;i++)
+            {
+                if(i!=index)
+                {
+                    document.getElementsByTagName('audio').item(i).pause();
+                    document.getElementsByTagName('audio').item(i).currentTime=0;
+                    document.getElementsByTagName('audio').item(i).style.visibility='hidden';
+                }
+            }
+
+            document.getElementsByTagName('audio').item(index).style.visibility='visible';
+            document.getElementsByTagName('audio').item(index).play();
+        }
+
+        function bg_change(musicImg)
+        {
+            document.getElementById("Player").style.background = 'rgb(12, 15, 18) url("../Images/' + musicImg + '") no-repeat center';
+            document.getElementById("Player").style.backgroundSize = "1050px 633px";
+        }
+
+        function nextPlay(index) 
+        {
+            document.getElementsByTagName('audio').item(index).play();
+            playSong(index);
+        }
+
+        function hoverEffect(index)
+        {
+            document.getElementsByClassName('songImg').item(index).style.opacity='0.4';
+            document.getElementsByClassName('playIcon').item(index).style.opacity='1';
+            document.getElementsByClassName('playIcon').item(index).style.transform='scale(1.3)';
+        }
+        function hoverOut(index)
+        {
+            document.getElementsByClassName('songImg').item(index).style.opacity='1';
+            document.getElementsByClassName('playIcon').item(index).style.opacity='0';
+            document.getElementsByClassName('playIcon').item(index).style.transform='scale(1)';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="../Images/Player logo.png">
+        <p>MusicWorld</p>
+    </header>
+
+    <div id="Player">
+
+        <audio src="../Images/Bekhayali.mp3" controls title="Bekhayali" onplay="bg_change('Bekhayali.jpg')" onended="nextPlay(1)"></audio>
+
+        <audio src="../Images/Dhakka - Sidhu Moose Wala.mp3" controls title="Dhakka" onplay="bg_change('DHAKKA-SIDHU.jpg')" onended="nextPlay(2)"></audio>
+
+        <audio src="../Images/Old Skool - Sidhu Moose Wala.mp3" controls title="Old Skool" onplay="bg_change('Old Skool.jpg')" onended="nextPlay(3)"></audio>
+
+        <audio src="../Images/Vicky Donor-Pani Da Rang(Male).mp3" controls title="Pani Da Rang" onplay="bg_change('Pani Da Rang.jpg')" onended="nextPlay(4)"></audio>
+
+        <audio src="../Images/Khairiyat (Happy) - Chhichhore (2019).mp3" controls title="Kairiyat(Happy)" onplay="bg_change('Khairiyat.jpeg')" onended="nextPlay(0)"></audio>
+    </div>
+
+    <div id="musiclist">
+        <div class="music">
+            <img src="../Images/Bekhayali.jpg" alt="" class="songImg" onmouseover="hoverEffect(0)" onmouseout="hoverOut(0)">
+            <i class="far fa-play-circle playIcon" onmouseover="hoverEffect(0)"
+            onmouseout="hoverOut(0)" onclick="playSong(0)"></i>
+            <table>
+                <tr>
+                    <th>Track : </th>
+                    <td>Bekhayali</td>
+                </tr>
+                <tr>
+                    <th>Artist : </th>
+                    <td>Sachet Tandon</td>
+                </tr>
+                <tr>
+                    <th>Album : </th>
+                    <td>Kabir singh</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="music">
+            <img src="../Images/DHAKKA-SIDHU.jpg" alt="" class="songImg" onmouseover="hoverEffect(1)" onmouseout="hoverOut(1)">
+            <i class="far fa-play-circle playIcon" onmouseover="hoverEffect(1)"
+            onmouseout="hoverOut(1)" onclick="playSong(1)"></i>
+            <table>
+                <tr>
+                    <th>Track : </th>
+                    <td>Dhakka</td>
+                </tr>
+                <tr>
+                    <th>Artist : </th>
+                    <td>Sidhu Moose Wala</td>
+                </tr>
+                <tr>
+                    <th>Album : </th>
+                    <td>Dhakka (2019)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="music">
+            <img src="../Images/Old Skool.jpg" alt="" class="songImg" onmouseover="hoverEffect(2)" onmouseout="hoverOut(2)">
+            <i class="far fa-play-circle playIcon" onmouseover="hoverEffect(2)" onmouseout="hoverOut(2)" onclick="playSong(2)"></i>
+            <table>
+                <tr>
+                    <th>Track : </th>
+                    <td>Old Skool</td>
+                </tr>
+                <tr>
+                    <th>Artist : </th>
+                    <td>Sidhu Moose Wala</td>
+                </tr>
+                <tr>
+                    <th>Album : </th>
+                    <td>Old Skool (2020)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="music">
+            <img src="../Images/Pani Da Rang.jpg" alt="" class="songImg" onmouseover="hoverEffect(3)" onmouseout="hoverOut(3)">
+            <i class="far fa-play-circle playIcon" onmouseover="hoverEffect(3)"  onmouseout="hoverOut(3)" onclick="playSong(3)"></i>
+            <table>
+                <tr>
+                    <th>Track : </th>
+                    <td>Pani Da Rang</td>
+                </tr>
+                <tr>
+                    <th>Artist : </th>
+                    <td>Ayushmann Khuranna</td>
+                </tr>
+                <tr>
+                    <th>Album : </th>
+                    <td>Vicky Donor</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="music">
+            <img src="../Images/Khairiyat.jpeg" alt="" class="songImg" onmouseover="hoverEffect(4)" onmouseout="hoverOut(4)">
+            <i class="far fa-play-circle playIcon" onmouseover="hoverEffect(4)" onmouseout="hoverOut(4)" onclick="playSong(4)"></i>
+            <table>
+                <tr>
+                    <th>Track : </th>
+                    <td>Kairiyat (Happy)</td>
+                </tr>
+                <tr>
+                    <th>Artist : </th>
+                    <td>Arijit Singh</td>
+                </tr>
+                <tr>
+                    <th>Album : </th>
+                    <td>Chhichhore (2019)</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

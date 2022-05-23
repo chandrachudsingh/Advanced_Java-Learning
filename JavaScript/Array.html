@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Array</title>
+    <script>
+        var arr=new Array(5);
+        function createArr()
+        {
+            for(var i=0;i<arr.length;i++)
+                arr[i]=parseInt(prompt("Enter "+(i+1)+" element"));
+        }
+
+        function showArr()
+        {
+            for(var i=0;i<arr.length;i++)
+                // alert((i+1)+" element is "+arr[i]);
+                div1.innerHTML+=(i+1)+" element is "+arr[i]+"<br>";
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="create array" onclick="createArr()">
+    <input type="button" value="show array" onclick="showArr()">
+    <div id="div1"></div>
+</body>
+</html>

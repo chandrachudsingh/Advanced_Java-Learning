@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+
+    <script>
+        var que=new Array(5);
+        que[0]="Q1). Who is the current Prime Misnister of India ?";
+        que[1]="Q2). Donald trump is in which position of US president ?";
+        que[2]="Q3). Total how many countries are there in the world ?";
+        que[3]="Q4). What is the population of the world according to the UN in 2020 ?";
+        que[4]="Q5). Who is the world's most paid athelete ?";
+
+        var opt=new Array(5);
+
+        opt[0]=new Array(4);
+        opt[0][0]="Rahul Gandhi";
+        opt[0][1]="Sonia Gandhi";
+        opt[0][2]="Narendra Modi";
+        opt[0][3]="Manmohan Singh";
+        
+        opt[1]=new Array(4);
+        opt[1][0]="41st President";
+        opt[1][1]="39st President";
+        opt[1][2]="43st President";
+        opt[1][3]="45st President";
+        
+        opt[2]=new Array(4);
+        opt[2][0]="191";
+        opt[2][1]="195";
+        opt[2][2]="205";
+        opt[2][3]="221";
+        
+        opt[3]=new Array(4);
+        opt[3][0]="7.8 Billion";
+        opt[3][1]="7.5 Billion";
+        opt[3][2]="7.1 Billion";
+        opt[3][3]="8.3 Billion";
+        
+        opt[4]=new Array(4);
+        opt[4][0]="Lionel Messi";
+        opt[4][1]="Christiano Ronaldo";
+        opt[4][2]="Neymar";
+        opt[4][3]="Roger Federer";
+
+        var ans=new Array(5);
+        ans[0]=2;
+        ans[1]=3;
+        ans[2]=1;
+        ans[3]=0;
+        ans[4]=3;
+
+        function designQuiz()
+        {
+            for(var i=0;i<que.length;i++)
+            {
+                document.write(que[i]+"<br>");
+                for(var j=0;j<opt[i].length;j++)
+                {
+                    var nm="Q"+(i+1);
+                    var ids=(i+1)+""+(j+1), lbids="lb"+nm+""+(j+1);
+                    document.write("<input type='radio' id='"+ids+"' name='"+nm+"'/><label for='"+ids+"' id='"+lbids+"'>"+opt[i][j]+"</label><br>");
+                }
+
+                document.write("<br>");
+            }
+            document.write("<input type='button' value='Submit' class='btn' onclick='calculate()'/><input type='button' value='Answer sheet' class='btn' onclick='showAns()'/>");
+        }
+
+        function calculate()
+        {
+            var score=0, count=0;
+            for(var i=0;i<que.length;i++)
+            {
+                var nm="Q"+(i+1);
+                for(var k=0;k<opt[i].length;k++)
+                {
+                    if(document.getElementsByName(nm).item(k).checked==true)
+                        count++;
+                }
+                
+                if(count>0)
+                {
+                    if(document.getElementsByName(nm).item(ans[i]).checked==true)
+                        score+=4;
+                    else
+                        score-=1;
+                }
+                count=0;
+            }
+            alert("Your score = "+score);
+        }
+
+        function showAns()
+        {
+            for(var i=0;i<que.length;i++)
+            {
+                var nm="Q"+(i+1);
+                if(document.getElementsByName(nm).item(ans[i]).checked==true)
+                {
+                    var lbids="lb"+nm+""+(ans[i]+1);
+                    document.getElementById(lbids).style.backgroundColor='greenyellow';
+                } 
+                else
+                {
+                    for(var j=0;j<opt[i].length;j++)
+                    {
+                        if(j!=ans[i] && document.getElementsByName(nm).item(j).checked==true)
+                        {
+                            var lbids="lb"+nm+""+(j+1);
+                            document.getElementById(lbids).style.backgroundColor='tomato';
+                            lbids="lb"+nm+""+(ans[i]+1);
+                            document.getElementById(lbids).style.backgroundColor='greenyellow';
+                        }
+                    }
+                }             
+            }
+
+            document.getElementsByClassName('btn').item(0).style.visibility='hidden';
+            document.getElementsByClassName('btn').item(1).style.visibility='hidden';
+        }
+    </script>
+</head>
+
+<body onload="designQuiz()">
+</body>
+
+</html>

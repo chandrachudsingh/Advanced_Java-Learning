@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+    <script>
+        // setInterval sets the Interval after which the given task is performed repeatedly until it is not cleared
+        var id;
+        function SayHello()
+        {
+            id=window.setInterval('alert("hello");',3000);
+        }
+
+        function EndHello()
+        {
+            id=window.clearInterval(id);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="click" onclick="SayHello()">
+    <input type="button" value="click here" onclick="EndHello()">
+</body>
+</html>
